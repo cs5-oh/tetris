@@ -1,0 +1,244 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(160deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+  color: #f0f0f0;
+}
+
+.app {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.header h1 {
+  margin: 0 0 0.5rem;
+  font-size: 2.5rem;
+  letter-spacing: 0.05em;
+}
+
+.subtitle {
+  margin: 0;
+  color: #a8b2d1;
+  font-size: 0.95rem;
+}
+
+.game-layout {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.side-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  min-width: 200px;
+}
+
+.panel-box {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 12px;
+  padding: 1rem 1.25rem;
+}
+
+.panel-box h2 {
+  margin: 0 0 0.75rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #e94560;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.score-value {
+  margin: 0;
+  font-size: 2.5rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.stat-label {
+  margin: 1rem 0 0.25rem;
+  font-size: 0.8rem;
+  color: #a8b2d1;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.stat-value {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.controls-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.controls-list li {
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+  color: #c9d1e8;
+}
+
+.controls-list li:last-child {
+  margin-bottom: 0;
+}
+
+kbd {
+  display: inline-block;
+  min-width: 1.6rem;
+  padding: 0.15rem 0.4rem;
+  font-family: inherit;
+  font-size: 0.8rem;
+  text-align: center;
+  background: #2a2a4a;
+  border: 1px solid #4a4a6a;
+  border-radius: 4px;
+  box-shadow: 0 2px 0 #1a1a2e;
+}
+
+.button-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.btn {
+  padding: 0.75rem 1.25rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.15s ease, opacity 0.15s ease;
+}
+
+.btn:hover {
+  transform: translateY(-1px);
+}
+
+.btn:active {
+  transform: translateY(0);
+}
+
+.btn-primary {
+  background: #e94560;
+  color: #fff;
+}
+
+.btn-primary:hover {
+  background: #ff6b6b;
+}
+
+.btn-secondary {
+  background: rgba(255, 255, 255, 0.12);
+  color: #f0f0f0;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.18);
+}
+
+.board-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.board {
+  display: grid;
+  /* grid 크기는 script.js의 COLS, ROWS 상수로 설정됩니다. */
+  gap: 2px;
+  padding: 8px;
+  background: #0d0d1a;
+  border: 3px solid #e94560;
+  border-radius: 6px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+  transition: opacity 0.2s ease;
+}
+
+.board.is-game-over {
+  opacity: 0.55;
+  border-color: #888;
+}
+
+.cell {
+  width: 1.75rem;
+  height: 1.75rem;
+  background: #1a1a2e;
+  border: 1px solid #2a2a4a;
+  border-radius: 2px;
+}
+
+.cell.filled {
+  border-color: rgba(255, 255, 255, 0.25);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.15);
+}
+
+.cell.piece-i {
+  background: #00f0f0;
+}
+
+.cell.piece-o {
+  background: #f0f000;
+}
+
+.cell.piece-t {
+  background: #a000f0;
+}
+
+.cell.piece-s {
+  background: #00f000;
+}
+
+.cell.piece-z {
+  background: #f00000;
+}
+
+.cell.piece-j {
+  background: #0000f0;
+}
+
+.cell.piece-l {
+  background: #f0a000;
+}
+
+.status-message {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #a8b2d1;
+  text-align: center;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
