@@ -23,11 +23,9 @@ HTML, CSS, JavaScript만으로 만든 브라우저 테트리스 게임입니다.
 
 ### 온라인에서 실행 (GitHub Pages)
 
-배포가 완료되면 아래 주소에서 플레이할 수 있습니다.
+게임 주소:
 
-```
-https://<GitHub-사용자명>.github.io/<저장소-이름>/
-```
+**https://cs5-oh.github.io/tetris/**
 
 ## 조작법
 
@@ -131,9 +129,9 @@ git push -u origin main
 
 1. GitHub에서 해당 저장소를 연다.
 2. **Settings** → **Pages**로 이동한다.
-3. **Build and deployment** → **Source**에서 **Deploy from a branch**를 선택한다.
-4. **Branch**를 `main`, 폴더를 `/ (root)`로 설정하고 **Save**한다.
-5. 1~2분 후 표시되는 URL로 접속해 확인한다.
+3. **Build and deployment** → **Source**에서 **GitHub Actions**를 선택한다.
+4. `main` 브랜치에 푸시되면 `.github/workflows/deploy-pages.yml` 워크플로가 자동 배포한다.
+5. 1~2분 후 https://cs5-oh.github.io/tetris/ 에서 확인한다.
 
 ### 3. 배포 구조 요구사항
 
